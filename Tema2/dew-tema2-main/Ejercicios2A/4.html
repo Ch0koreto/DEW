@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><span id="num1">--</span> dividido entre <span id="num2">--</span> da de resto <span id="resto">--</span> </p>
+    <script>
+        let num1 = prompt("Primer número: ");
+        let num2 = prompt("Segundo número: ");
+        let resto = Number(num1)%Number(num2);  // La conversión de tipos con Number no es necesaria.
+        document.getElementById('num1').innerHTML = num1;
+        document.getElementById('num2').innerHTML = num2;
+        document.getElementById('resto').innerHTML = resto;
+    </script>
+</body>
+</html>
