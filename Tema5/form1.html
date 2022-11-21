@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input:invalid {
+        border: solid red;
+      }
+      input:valid {
+        border: solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Prueba formulario</h1>
+    <form action="otra.html" method="get" name="formulario1">
+      <p>Que curso te gusta mas?</p>
+      <p>
+        <label for="">
+          <input type="radio" name="curso" value="1" /> 1DAW
+        </label>
+        <label for="">
+          <input type="radio" name="curso" value="2" /> 2DAW
+        </label>
+      </p>
+      <p>
+        Que modulo de DAW te gusta
+        mas?(PRO,LND,LNT,BAE,ENT,FOL,DEW,DAW,DOR,DPL,EMR)
+      </p>
+      <input
+        type="text"
+        name="nombre"
+        required
+        pattern="POR|LND|LNT|BAE|ENT|FOL|DEW|DSW|SOR|DPL|EMR"
+      />
+      <input type="button" />
+      <script>
+        const modulos = [
+          ["PRO", "LND", "LNT", "BAE", "ENT", "FOL"],
+          ["DEW", "DSW", "DOR", "EMR", "DPL"],
+        ];
+        document.formulario1.addEnventListener("submit", () => {
+          e.preventDeafult();
+          let curso = document.formulario1.curso.value;
+          if (modulos[curso - 1].includes(document.formulario1.nombre.value)) {
+            console.log("correcto");
+            document.formulario1.submit();
+          } else {
+            console.log("incorreto");
+            document.formulario1.nombre.focus();
+          }
+        });
+        documen.querySelector('a').addEnventListener('click', funcion1);
+        function funcion1(e){
+          e.preventDeafult();
+          console.log('ejecutando funcion1');
+        }
+      </script>
+    </form>
+  </body>
+</html>
